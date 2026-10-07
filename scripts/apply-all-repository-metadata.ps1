@@ -44,6 +44,9 @@ $metadata = @{
 
 foreach ($repo in $metadata.Keys) {
   $m = $metadata[$repo]
-  gh repo edit "$owner/$repo" --description $m.d --add-topic ($m.t -split ",") | Out-Null
+  gh repo edit "$owner/$repo" --description $m.d | Out-Null
+  foreach ($topic in ($m.t -split ",")) {
+    gh repo edit "$owner/$repo" --add-topic $topic | Out-Null
+  }
   Write-Host "Updated $repo"
 }
