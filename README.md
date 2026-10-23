@@ -37,7 +37,7 @@ The surrounding portfolio explores:
 
 ## Domain background
 
-I am pursuing a **BS in Data Science and Applications at IIT Madras** and have completed an IIT Guwahati-associated CS micro-credit programme through Daksh Gurukul × Masai × NSDC.
+I am pursuing my **UnderGrad in AI and Data Science at IIT Madras** and have completed my Associate **Minor in IIT Guwahati-associated Computer Science** micro-credit programme through Daksh Gurukul × Masai × NSDC.
 
 I also have sustained practical exposure to export-import and logistics operations through family-run businesses, which informs the EXIM and logistics systems in this portfolio.
 
