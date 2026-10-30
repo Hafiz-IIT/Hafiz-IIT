@@ -53,3 +53,26 @@ A research idea is not presented as an implementation. A prototype is not presen
 
 Start with [~haf.s__ OS Core](https://github.com/Hafiz-IIT/hafs-os-core) for the portfolio architecture, then explore the flagship evidence-gated autonomy system.
 
+
+
+## Start here
+
+**Flagship:** [EXIM AI — Evidence-Gated Autonomy](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy) — the strongest current research artifact, with a synthetic benchmark, reproducibility workflow, explicit claim ledger, and documented security experiments.
+
+**Architecture index:** [~haf.s__ OS Core](https://github.com/Hafiz-IIT/hafs-os-core) — the portfolio map and engineering/research organization layer.
+
+### The portfolio in one loop
+
+**Observe → Remember → Gather Evidence → Evaluate Risk → ACT / VERIFY / REQUEST EVIDENCE / DEFER / ESCALATE**
+
+The repositories are deliberately separated by evidence level. A prototype is not called a deployment; a synthetic result is not called external validation; a manuscript scaffold is not called a publication.
+
+### Evidence ladder
+
+**Concept → Architecture → Implementation → Tested → Reproducible → Experimentally Validated → Externally Validated → Deployed**
+
+Current work is concentrated on moving selected artifacts upward through this ladder with explicit evidence rather than broad claims.
+
+## Contact / academic profile
+
+For the academic/research context, see the individual repository READMEs and manuscript claim ledgers rather than treating this profile as a publication record.
