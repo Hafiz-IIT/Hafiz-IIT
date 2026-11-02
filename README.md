@@ -56,6 +56,9 @@ A design is not described as an implementation; a synthetic result is not descri
 
 ## Where to start
 
+For the complete categorized repository inventory and evidence-status notes, see the [full portfolio index](https://github.com/Hafiz-IIT/hafs-os-core/blob/main/docs/PORTFOLIO_INDEX.md) and [portfolio completion audit](https://github.com/Hafiz-IIT/hafs-os-core/blob/main/docs/PORTFOLIO_COMPLETION_AUDIT.md).
+
+
 1. [EXIM AI — Evidence-Gated Autonomy](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy) — flagship evidence and action-governance research.
 2. [HAFS OS Core](https://github.com/Hafiz-IIT/hafs-os-core) — portfolio architecture, recovered research map, and agent-governance design.
 3. [Agent Evidence Probes](https://github.com/Hafiz-IIT/agent-evidence-probes) — inspectable evaluation work on evidence sufficiency and agent decisions.
