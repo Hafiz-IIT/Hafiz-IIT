@@ -11,13 +11,13 @@ These are the strongest current research artifacts, not production deployments o
 ## Tier 2 — Supporting research systems
 - Multilingual Reliability Bench
 - EXIM Document Truth Bench
-- Secure Document RAG Agent
+- Tenant-scoped Document RAG Prototype
 - Cargo Scan Consistency Lab
 - Agency QA Orchestrator
 - Logistics Optimization Lab
-- Cold Chain Digital Twin
+- Cold-Chain Thermal Simulation Prototype
 - Port Operations Simulator
-- Multi-Agent Logistics Simulator
+- Multi-Agent Logistics Allocation Heuristic
 - Traffic Incident Routing Lab
 - Underwater Li-Fi Simulator
 - Institutional Evidence Tracker
@@ -35,10 +35,10 @@ These are the strongest current research artifacts, not production deployments o
 - Smart City Management
 
 ## Research extension labs
-- Residual RL with Linear Priors
-- Koopman Control Lab
-- Bayesian Safe RL Lab
-- Hybrid LQR + RL Control
+- Residual Control with Linear Priors (no trained RL policy yet)
+- Koopman-Lifted Prediction Lab (not a controller)
+- Bayesian Action-Gating Lab (scalar posterior prototype)
+- Hybrid Linear Feedback + Fixed Residual (no trained RL policy or LQR solver)
 
 ## Manuscript companions
 Each extension lab has a separate manuscript/reproducibility repository. These are research scaffolds, not claims of publication.
