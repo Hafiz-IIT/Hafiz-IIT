@@ -6,7 +6,7 @@
 - Exclusion: the profile `README.md` was not read for editing, executed, or modified. No repository README was changed in this audit.
 - Code/research review: repository purpose and file tree; primary implementation modules; tests; workflows; experiment protocols/results; manuscript claims and references where applicable.
 - Execution: branch-specific GitHub Actions checks were triggered for all 33 project repositories with repair PRs. The two manuscript-only repositories also received citation-completeness PRs and LaTeX CI. The profile metadata script was inspected but deliberately not run because it changes remote repository descriptions/topics; it now defaults to dry-run and requires `-Apply`.
-- Change control: all changes are on reviewable branches and draft PRs. Nothing was merged to `main`.
+- Change control: all 33 project repositories and the profile repository now have one draft PR each (34 repositories / 34 draft PRs total). Nothing was merged to `main`.
 
 ## Executive assessment
 
@@ -73,7 +73,7 @@ The first repair wave addresses high-impact implementation defects and claim mis
 
 ## Change-control state
 
-- All repair PRs are draft.
+- All 34 repository PRs are draft.
 - No branch was merged to `main`.
 - The profile `README.md` was not modified.
 - The audit report records the state observed on 18 November 2026; CI run status should be refreshed before any PR is marked ready for review.
