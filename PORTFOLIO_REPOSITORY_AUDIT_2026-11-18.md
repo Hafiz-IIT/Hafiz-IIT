@@ -55,6 +55,10 @@ The first repair wave addresses high-impact implementation defects and claim mis
 | 33 | [exim-multimodal-cargo-framework-paper](https://github.com/Hafiz-IIT/exim-multimodal-cargo-framework-paper) | Architecture and evaluation proposal for multimodal EXIM cargo evidence | Manuscript correctly disclaims deployed customs integration, certified scanning hardware and validated operational performance. Draft [PR #1](https://github.com/Hafiz-IIT/exim-multimodal-cargo-framework-paper/pull/1) adds the ITC/UNCTAD/UNECE Article 7.4 risk-management citation and corrects its attribution. No implementation exists in this repository. |
 | 34 | [Hafiz-IIT](https://github.com/Hafiz-IIT/Hafiz-IIT) | Profile/portfolio repository | Audited non-README inventory, metadata script and research pipeline. The profile README was excluded and left untouched. Metadata script was not executed; it now defaults to dry-run. |
 
+## CI verification snapshot
+
+As of this audit pass, the latest repair-branch GitHub Actions checks are successful for 32 of the 33 project repositories. The EGA v5 full workflow is still running at [run #44187403851](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44187403851): its unit/regression tests, benchmark generation and integrity checks, and v4 provenance experiment have completed successfully; the v0.4 reconstruction/sensitivity step is still executing. The restaurant API's final route-authentication and password-storage regression tests pass in [run #44188205875](https://github.com/Hafiz-IIT/resturant-order-management/actions/runs/44188205875). The profile metadata script has no CI workflow and was not executed because it performs remote metadata writes.
+
 ## Cross-repository engineering findings
 
 1. **CI scope varies.** A green workflow may mean import/syntax checks, unit tests, manifest verification, or LaTeX compilation. It does not mean the entire application was deployed or integration-tested.
