@@ -7,13 +7,13 @@
 | 1 | Evidence-Gated Autonomy | **Strongest** — executable benchmark, results, adversarial/provenance experiments, manuscript + LaTeX | arXiv v1 first |
 | 2 | Agent Evidence Probes | Executable benchmark; narrower contribution | strengthen experiments → manuscript |
 | 3 | Memory Governance | Executable retention/provenance policy | benchmark + threat model → manuscript |
-| 4 | Safe RL Action Gate | Executable control research + staged protocols | expand empirical evaluation → manuscript |
+| 4 | One-step Safety Action Gate | Executable deterministic state-constraint gate | add uncertainty, disturbances, model-mismatch evaluation before any robust-safety claim |
 | 5 | Multilingual Reliability | Executable paired benchmark | expand languages/metrics → manuscript |
 | 6 | EXIM Document Truth | Executable synthetic benchmark | consolidate with EXIM evidence line or separate paper |
-| 7 | Residual RL with Linear Priors | deterministic residual-control scaffold + protocol | implement/train a residual policy and run matched robotic/control benchmarks |
-| 8 | Koopman-Based Linear Embeddings | scalar EDMD-style lab + protocol | extend systems, baselines and out-of-range experiments |
-| 9 | Bayesian Priors for Safe RL | scalar Gaussian posterior gate + protocol | evaluate calibration, false-allow/false-block trade-offs and shift |
-| 10 | Hybrid LQR + Deep RL | scalar fixed-residual simulator + protocol | implement a valid LQR design and trained residual policy |
+| 7 | Residual Control with Linear Priors | deterministic scalar residual-control scaffold + protocol | implement/train a residual policy and run matched control benchmarks |
+| 8 | Koopman-Lifted Prediction | scalar EDMD-style prediction lab + protocol | extend systems, baselines and out-of-range experiments before attempting control |
+| 9 | Bayesian Uncertainty Gates | scalar Gaussian posterior action gate + protocol | evaluate calibration, false-allow/false-block trade-offs and shift |
+| 10 | Hybrid Linear Feedback + Fixed Residual | scalar proportional baseline and fixed residual + protocol | implement a valid LQR design and trained residual policy before using LQR/Deep-RL claims |
 | 11 | Cargo Multimodal Framework | architecture manuscript + synthetic evaluation protocol | strengthen with reproducible document/cargo benchmarks; no physical scanner claim |
 
 ## Publication rule
@@ -24,14 +24,14 @@ A research idea or manuscript scaffold is **not** automatically a paper.
 
 ## Current control / robotics manuscript set
 
-Four companion manuscripts are in preparation and have LaTeX source, verified foundational references, experiment protocols, results schemas, and CI compilation:
+Four companion manuscripts are in preparation and have LaTeX source, foundational references, experiment protocols, results schemas, and CI compilation. Only the Koopman companion currently reports a completed synthetic prediction experiment; the residual, Bayesian-gating and hybrid-control manuscripts remain protocol/scaffold papers with no empirical results:
 
-- [Residual Reinforcement Learning with Linear Statistical Priors for Robotic Automation](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper)
-- [Koopman-Based Linear Embeddings for Control of Automated Agents](https://github.com/Hafiz-IIT/koopman-control-paper)
-- [Bayesian Linear Models as Priors for Safe Reinforcement Learning in Robotics](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper)
-- [Hybrid Control Architectures: Merging LQR and Deep RL for Robust Robot Autonomy](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper)
+- [Residual Control with Linear Statistical Priors: A Research Protocol for Robotics](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper)
+- [Koopman-Lifted Prediction of Scalar Nonlinear Dynamics: A Reproducible Synthetic Benchmark](https://github.com/Hafiz-IIT/koopman-control-paper)
+- [Bayesian Uncertainty Gates for Conservative Action Authorization: A Scalar Prototype](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper)
+- [Hybrid Linear Feedback with a Fixed Residual: A Research Protocol for Robotic Control](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper)
 
-These are **not publication-ready yet**: current companion implementations are deliberately small scalar prototypes, and the result manifests remain marked not_run. Their titles preserve the research directions; they do not imply that trained RL, physical robotics, or formal safety guarantees are already implemented.
+These are **not publication-ready yet**. The Koopman paper reports a synthetic scalar prediction pilot; the other three remain research protocols without trained RL or comparative empirical results. None establishes physical-robot performance or formal safety guarantees.
 
 ## EGA v1
 
@@ -39,7 +39,7 @@ Current first submission candidate:
 
 **Evidence-Gated Autonomy: A Synthetic Benchmark for Consequential Action Authorization Under Uncertain and Compromised Evidence**
 
-The EGA repository already contains the strongest evidence package and the arXiv-ready LaTeX manuscript.
+The EGA repository contains the strongest evidence package and the current v5 manuscript/results. It remains an arXiv candidate pending a final reproducibility freeze, independent manuscript/prior-art review, and author approval.
 
 ## Research-paper standard
 
