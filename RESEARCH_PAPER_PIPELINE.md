@@ -4,7 +4,7 @@
 
 | Priority | Research line | Evidence maturity | Publication path |
 |---|---|---|---|
-| 1 | Evidence-Gated Autonomy | **Strongest** — executable benchmark, results, adversarial/provenance experiments, manuscript + LaTeX | arXiv v1 first |
+| 1 | Evidence-Gated Autonomy | **Strongest** — executable benchmark, v5 threat matrix/results, adversarial/provenance experiments, manuscript + LaTeX | freeze reproducibility → independent prior-art/manuscript review → submit only if evidence and claims survive review |
 | 2 | Agent Evidence Probes | Executable benchmark; narrower contribution | strengthen experiments → manuscript |
 | 3 | Memory Governance | Executable retention/provenance policy | benchmark + threat model → manuscript |
 | 4 | One-step Safety Action Gate | Executable deterministic state-constraint gate | add uncertainty, disturbances, model-mismatch evaluation before any robust-safety claim |
@@ -33,9 +33,9 @@ Four companion manuscripts are in preparation and have LaTeX source, foundationa
 
 These are **not publication-ready yet**. The Koopman paper reports a synthetic scalar prediction pilot; the other three remain research protocols without trained RL or comparative empirical results. None establishes physical-robot performance or formal safety guarantees.
 
-## EGA v1
+## EGA — current v5 submission candidate
 
-Current first submission candidate:
+Current priority candidate:
 
 **Evidence-Gated Autonomy: A Synthetic Benchmark for Consequential Action Authorization Under Uncertain and Compromised Evidence**
 
