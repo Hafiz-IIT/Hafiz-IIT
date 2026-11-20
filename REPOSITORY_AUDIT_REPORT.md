@@ -61,6 +61,18 @@ All 100 fixtures are labelled constructed/synthetic. The runner compares baselin
 
 **Live API status:** not run because no provider credentials were supplied. Defaults target a best-effort sub-90-second run with concurrency 40 and a 15-second request timeout; this is not a hard real-time guarantee under provider throttling.
 
+
+## EGA v3 artifact review
+
+The latest authenticated-witness-quorum artifact was downloaded from CI run [44157745993](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44157745993). It contains 5,600 rows (8 scenarios × 700 HIGH-risk cases). Both CSV hashes were independently recomputed and matched the artifact manifest:
+
+- evidence_trust_v3_cases.csv: 4d81c3b15c73d11a15e718324539e02ef7bee8601bbbfdafc4cc69d49da65c34
+- evidence_trust_v3_summary.csv: 3208079f763132fd8c35f23c302e5c812d6d197c53e17ef24b8e1f97eb65fa94
+
+The current 2-of-3 policy recovers the 50 deliberately constructed safe verifier-false-reject cases after a valid witness quorum and all other guards pass. Honest baseline: 100/100 safe controls authorized, 0 unsafe ACT. Two-witness compromise: 50/700 unsafe ACT, all in C4 consistent-but-wrong. All-witness compromise also yields 50/700 unsafe ACT. The 3-of-3 sensitivity blocks the modeled two-witness attack but loses availability when one credential is invalid; full-roster compromise still defeats it. These are deterministic outcomes under synthetic assumptions, not attack probabilities.
+
+The earlier pre-recovery artifact showed 50% false-block on the honest baseline. That result is superseded by the current bounded-recovery implementation and should not be quoted as the latest v3 result. The newest follow-up run after the low-risk integrity regression test was still running when this report was updated.
+
 ## High-priority residual work
 
 1. EGA: test recovery under imperfect/adversarial witness quality, registry-root governance and real source-independence proof. Do not claim production security or arXiv readiness.
