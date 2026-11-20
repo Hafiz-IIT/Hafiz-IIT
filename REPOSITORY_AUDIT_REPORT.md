@@ -242,3 +242,14 @@ The three controller-related test suites verify deterministic numerical behavior
 ## Core EXIM current-head rerun (2026-11-21)
 
 The current EXIM Tier 2 branch initially had no unit/synthetic workflow. Reintroducing it exposed a second-order integration issue: benchmark v0.4 generation and verification passed, but the parent v0.3 verifier failed because its generated fixtures had not been created. The workflow was corrected to generate v0.3 before verifying it. The latest current-head run [44812760656](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44812760656) passed: 40 unit/Tier 2 fixture tests, deterministic v0.4 generation and integrity verification (1,400 cases, 700 paired situations, 14 families, zero pair-integrity failures), and parent v0.3 generation/verification. No provider API calls were made. The earlier malformed-verifier `KeyError: dependency_group` failure occurred on a prior commit and was fixed before the current successful run.
+
+
+## Three-repository evidence-gating current-head verification (2026-11-21)
+
+| Repository | Current verification | Interpretation |
+|---|---|---|
+| [agent-evidence-probes](https://github.com/Hafiz-IIT/agent-evidence-probes) | [31 unit tests passed](https://github.com/Hafiz-IIT/agent-evidence-probes/actions/runs/44810079797); [all 100 Tier 2 scenarios validated and runner tests passed](https://github.com/Hafiz-IIT/agent-evidence-probes/actions/runs/44810079847); [Tier 1 deterministic evaluation passed](https://github.com/Hafiz-IIT/agent-evidence-probes/actions/runs/44810081596) | The workflow's baseline/evidence-gated run invokes `run_tier1_conformance.py`; it is not a real Tier 2 provider call. |
+| [EXIM-AI-Evidence-Gated-Autonomy](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy) | [40 unit and Tier 2 fixture tests plus v0.3/v0.4 generation and verification passed](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44812760656) | Deterministic synthetic benchmarks only; no LLM API calls. |
+| [memory-governor](https://github.com/Hafiz-IIT/memory-governor) | [17 unit tests](https://github.com/Hafiz-IIT/memory-governor/actions/runs/44796608689) and [CI](https://github.com/Hafiz-IIT/memory-governor/actions/runs/44796608866) passed | Validates memory-governor unit/CI behavior; the shared 100-case fixture validation is run from the Agent Evidence Probes workflow. |
+
+**Important distinction:** all 100 Tier 2 fixtures and their runner contracts are validated, but the real-model Tier 2 evaluation has not been executed. No baseline-vs-evidence-gated LLM outcome rates or model performance numbers are claimed.
