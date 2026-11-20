@@ -26,20 +26,20 @@ A research idea or manuscript scaffold is **not** automatically a paper.
 
 Four companion manuscripts are in preparation and have LaTeX source, verified foundational references, experiment protocols, results schemas, and CI compilation:
 
-- [Residual Reinforcement Learning with Linear Statistical Priors for Robotic Automation](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper)
-- [Koopman-Based Linear Embeddings for Control of Automated Agents](https://github.com/Hafiz-IIT/koopman-control-paper)
-- [Bayesian Linear Models as Priors for Safe Reinforcement Learning in Robotics](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper)
-- [Hybrid Control Architectures: Merging LQR and Deep RL for Robust Robot Autonomy](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper)
+- [Residual Control with a Fixed Linear Baseline: A Research Protocol for Robotics](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper)
+- [Koopman-Lifted Prediction of Scalar Nonlinear Dynamics: A Reproducible Synthetic Benchmark](https://github.com/Hafiz-IIT/koopman-control-paper)
+- [Bayesian Uncertainty Gates for Conservative Action Authorization: A Scalar Prototype](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper)
+- [Hybrid Linear Feedback with a Fixed Residual: A Research Protocol for Robotic Control](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper)
 
 These are **not publication-ready yet**: current companion implementations are deliberately small scalar prototypes, and the result manifests remain marked not_run. Their titles preserve the research directions; they do not imply that trained RL, physical robotics, or formal safety guarantees are already implemented.
 
 ## EGA v1
 
-Current first submission candidate:
+Current leading preprint candidate (not yet frozen for submission):
 
 **Evidence-Gated Autonomy: A Synthetic Benchmark for Consequential Action Authorization Under Uncertain and Compromised Evidence**
 
-The EGA repository already contains the strongest evidence package and the arXiv-ready LaTeX manuscript.
+The EGA repository contains the strongest current evidence package and a LaTeX manuscript that compiles in CI. The v2 and v3 research branches remain draft pull requests; the v3 synthetic suite still shows a 50% false-block rate on its honest baseline, so the work must not yet be described as deployment-ready or publication-final. Complete the metric investigation, threat-model review, citation audit, reproducibility freeze and author review before calling it arXiv-ready.
 
 ## Research-paper standard
 
