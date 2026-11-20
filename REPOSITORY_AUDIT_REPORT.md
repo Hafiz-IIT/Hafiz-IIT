@@ -258,3 +258,14 @@ The current EXIM Tier 2 branch initially had no unit/synthetic workflow. Reintro
 ## Institutional evidence tracker encapsulation follow-up (2026-11-21)
 
 A second-pass review found that public mutable collections could bypass the authorized case methods even after constructor validation. The repair now detaches constructor inputs, exposes evidence via a read-only mapping, exposes dependency/authorization sets and audit history as immutable snapshots, and prevents public state reassignment after initialization/completion. [13 unit tests](https://github.com/Hafiz-IIT/institutional-evidence-tracker/actions/runs/44813821267) and [CI](https://github.com/Hafiz-IIT/institutional-evidence-tracker/actions/runs/44813821280) passed at branch head `61029f160deb92d9fa7e2107c5ed98c863c4a16e`. A further regression prevents direct assignment of the internal completion flag before the READY/owner checks. This remains an in-process application-level control; actor identities are not authenticated.
+
+
+## Remaining policy, retrieval and benchmark checks (2026-11-21)
+
+| Repository | Tests | CI | Review note |
+|---|---:|---|---|
+| [safe-rl-action-gate](https://github.com/Hafiz-IIT/safe-rl-action-gate) | 17 | [passed](https://github.com/Hafiz-IIT/safe-rl-action-gate/actions/runs/44801767289) | Read-only constraint snapshot, malformed predicate outputs and exceptions fail closed; caller-provided predicate functions remain trusted code. |
+| [secure-doc-rag-agent](https://github.com/Hafiz-IIT/secure-doc-rag-agent) | 15 | [passed](https://github.com/Hafiz-IIT/secure-doc-rag-agent/actions/runs/44802519645) | Tenant/owner filters are applied before ranking; evidence minimum retained in final extractive answer. Identity and sensitivity labels are caller-supplied; this is not authenticated storage. |
+| [exim-copilot-core](https://github.com/Hafiz-IIT/exim-copilot-core) | 11 | [passed](https://github.com/Hafiz-IIT/exim-copilot-core/actions/runs/44786708000) | Uploader/reviewer separation, stale-verification invalidation and two-reviewer high-risk quorum checked; actor IDs remain caller-supplied. |
+| [agency-qa-orchestrator](https://github.com/Hafiz-IIT/agency-qa-orchestrator) | 9 | [passed](https://github.com/Hafiz-IIT/agency-qa-orchestrator/actions/runs/44785773999) | Passing verification requires a non-empty evidence reference; evidence references are pointers, not proof of artifact integrity. |
+| [multilingual-reliability-bench](https://github.com/Hafiz-IIT/multilingual-reliability-bench) | 16 | [passed](https://github.com/Hafiz-IIT/multilingual-reliability-bench/actions/runs/44814061428) | Added rejection of empty parallel cases; unsupported-only languages have undefined supported accuracy rather than fabricated zero accuracy. Exact-match scoring remains a limitation. |
