@@ -225,3 +225,15 @@ The following six repair branches were rechecked at their current heads. Each li
 | [college-ops-copilot-core](https://github.com/Hafiz-IIT/college-ops-copilot-core) | 13 tests passed ([run](https://github.com/Hafiz-IIT/college-ops-copilot-core/actions/runs/44811394804)) | [passed](https://github.com/Hafiz-IIT/college-ops-copilot-core/actions/runs/44811394984) | Added validated, defensive copies for ticket fields/events; duplicate service categories rejected. Ticket rules and ServiceCatalog definitions remain separate sources of truth and should be unified before expanding the workflow. |
 
 This snapshot verifies the listed branch heads and configured checks only. Smart City has a five-test smoke suite, not a broad integration/security suite. No live deployment, real student/patient data, or production database was exercised.
+
+
+## Numerical research-prototype verification (2026-11-21)
+
+| Repository | Tests | Verification | Scope correction / residual limitation |
+|---|---:|---|---|
+| [residual-rl-linear-priors](https://github.com/Hafiz-IIT/residual-rl-linear-priors) | 9 | [CI passed; deterministic tests and documented demo](https://github.com/Hafiz-IIT/residual-rl-linear-priors/actions/runs/44805620380) | A fixed scalar residual correction over a linear baseline; no trained RL policy. |
+| [bayesian-safe-rl-lab](https://github.com/Hafiz-IIT/bayesian-safe-rl-lab) | 10 | [CI passed; deterministic tests and documented demo](https://github.com/Hafiz-IIT/bayesian-safe-rl-lab/actions/runs/44804980383) | Scalar Normal--Normal posterior and interval gate; not a learned policy, calibrated hazard model or formal safety proof. |
+| [hybrid-lqr-rl-control](https://github.com/Hafiz-IIT/hybrid-lqr-rl-control) | 9 | [CI passed; deterministic tests and documented demo](https://github.com/Hafiz-IIT/hybrid-lqr-rl-control/actions/runs/44805362236) | Scalar linear feedback plus fixed cubic residual; does not solve an LQR Riccati equation or train RL. |
+| [koopman-control-lab](https://github.com/Hafiz-IIT/koopman-control-lab) | 15 | [CI passed; tests, demo and fixed-seed EDMD benchmark](https://github.com/Hafiz-IIT/koopman-control-lab/actions/runs/44811759144) | Scalar polynomial EDMD-style prediction prototype, not a controller/MPC or proof of Koopman invariance. Added overflow detection for finite states whose polynomial features overflow. |
+
+The three controller-related test suites verify deterministic numerical behavior only; their passing demos do not constitute closed-loop stability proofs or hardware validation. Koopman experiment artifacts are synthetic and fixed-seed; prediction metrics are not control metrics.
