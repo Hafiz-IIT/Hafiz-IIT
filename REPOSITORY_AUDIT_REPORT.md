@@ -70,6 +70,22 @@ The three Tier 2 datasets were checked together on the agent-evidence research b
 
 The current Tier 2 harness is not a live model result. No OpenAI, Anthropic or Groq requests have been executed; no provider credentials were supplied. Dataset-validation CI checks fixture shape/composition and runner regressions only. The live API experiment remains pending.
 
+
+## Second-pass defect repairs and verification (2026-11-21)
+
+A further source-level pass found and repaired additional issues on existing audit/research branches. These are incremental fixes, not a claim that every repository has received a formal line-by-line security audit.
+
+| Repository | Additional defect repaired | Verification |
+|---|---|---|
+| [HAFS OS Core PR #2](https://github.com/Hafiz-IIT/hafs-os-core/pull/2) | Existing SQLite databases lacked the new task-status column; added an idempotent migration and legacy-schema regression | [19 unit tests](https://github.com/Hafiz-IIT/hafs-os-core/actions/runs/44800092581), [CI](https://github.com/Hafiz-IIT/hafs-os-core/actions/runs/44800092909) passed |
+| [EXIM Document Truth Bench PR #4](https://github.com/Hafiz-IIT/exim-document-truth-bench/pull/4) | Frozen document records retained mutable caller-owned field mappings; added defensive copy and immutable mapping | [10 tests](https://github.com/Hafiz-IIT/exim-document-truth-bench/actions/runs/44800314883), [CI](https://github.com/Hafiz-IIT/exim-document-truth-bench/actions/runs/44800315234) passed |
+| [EGA Experiment 3 PR #10](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/pull/10) | Fixed family-scoped split-key collisions, strict confidence schema, numeric overflow handling, finite pricing/budget checks, task-limit validation, and inline-credential rejection; added dedicated API-free test workflow | [25 harness tests](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44801467450) passed. This is not a live model experiment |
+| [Safe RL Action Gate PR #2](https://github.com/Hafiz-IIT/safe-rl-action-gate/pull/2) | Prevented callers from clearing/replacing safety constraints after gate construction; hardened large-number validation | [17 tests](https://github.com/Hafiz-IIT/safe-rl-action-gate/actions/runs/44801757071), [CI](https://github.com/Hafiz-IIT/safe-rl-action-gate/actions/runs/44801756192) passed |
+| [Multilingual Reliability Bench PR #2](https://github.com/Hafiz-IIT/multilingual-reliability-bench/pull/2) | Made unsupported-only metrics undefined, rejected empty gold labels, canonicalized identifiers and validated support flags | [15 tests](https://github.com/Hafiz-IIT/multilingual-reliability-bench/actions/runs/44802070264) passed |
+| [Secure Doc RAG PR #3](https://github.com/Hafiz-IIT/secure-doc-rag-agent/pull/3) | Prevented a snippet cap from returning fewer cited sources than the configured minimum-evidence threshold | [15 tests and CI](https://github.com/Hafiz-IIT/secure-doc-rag-agent/actions/runs/44802505911) passed |
+
+The canonical HAFS OS Core portfolio deep-audit report also records these as findings A-31 through A-36. All changes remain on draft PRs. No real provider calls were made, no synthetic outcomes were represented as observations, and no profile README was edited.
+
 ## EGA v3 artifact review
 
 The latest authenticated-witness-quorum artifact was downloaded from CI run [44157745993](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44157745993). It contains 5,600 rows (8 scenarios × 700 HIGH-risk cases). Both CSV hashes were independently recomputed and matched the artifact manifest:
