@@ -113,3 +113,15 @@ The earlier pre-recovery artifact showed 50% false-block on the honest baseline.
 - README files were not edited.
 - Superseded duplicate PRs were closed with explanations; consolidated PRs remain draft.
 - A few latest EXIM follow-up workflows were still running at the time of this report.
+
+
+## Second-pass audit continuation (2026-11-21)
+
+Two additional repositories received deeper numerical/edge-case review on their existing draft branches:
+
+| Repository | Additional issue found and repaired | Verification |
+|---|---|---|
+| [Predictive Intelligence Platform PR #3](https://github.com/Hafiz-IIT/predictive-intelligence-platform/pull/3) | MAE could overflow while summing individually finite errors even when the final mean was representable. The implementation now scales errors before summation and rescales the mean. | [16 unit tests passed](https://github.com/Hafiz-IIT/predictive-intelligence-platform/actions/runs/44804480366); [CI passed](https://github.com/Hafiz-IIT/predictive-intelligence-platform/actions/runs/44804480251). Verified at `5abe15e8c97ce62a1f1dd7ad335f62ce11258196`. |
+| [Cargo Scan Consistency Lab PR #3](https://github.com/Hafiz-IIT/cargo-scan-consistency-lab/pull/3) | Extreme finite cargo measurement ratios and extremely large integer inputs could trigger overflow or uncontrolled conversion errors. Added finite conversion and overflow-safe ratio handling, with regression tests. | [20 unit tests passed](https://github.com/Hafiz-IIT/cargo-scan-consistency-lab/actions/runs/44803494349); [CI passed](https://github.com/Hafiz-IIT/cargo-scan-consistency-lab/actions/runs/44803494372). Verified at `7b2b00886a661b89b7585b3dfcfb993500f3c56a`. |
+
+These are additional deterministic code/CI checks only. No live model, customs, sensor, forecasting, or other external-service experiment was performed. The predictive methods remain simple baselines; the cargo fusion remains a transparent heuristic whose independence labels and confidence values are caller assertions, not authenticated provenance or calibrated probabilities.
