@@ -1,7 +1,5 @@
 # Portfolio Index
 
-> **Engineering and research audit:** [34-repository audit, findings, repairs and CI status](REPOSITORY_AUDIT_2026-11-20.md).
-
 ## Tier 1 — Flagship evidence
 1. [EXIM AI — Evidence-Gated Autonomy](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy)
 2. [Agent Evidence Probes](https://github.com/Hafiz-IIT/agent-evidence-probes)
