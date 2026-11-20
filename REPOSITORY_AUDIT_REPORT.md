@@ -237,3 +237,8 @@ This snapshot verifies the listed branch heads and configured checks only. Smart
 | [koopman-control-lab](https://github.com/Hafiz-IIT/koopman-control-lab) | 15 | [CI passed; tests, demo and fixed-seed EDMD benchmark](https://github.com/Hafiz-IIT/koopman-control-lab/actions/runs/44811759144) | Scalar polynomial EDMD-style prediction prototype, not a controller/MPC or proof of Koopman invariance. Added overflow detection for finite states whose polynomial features overflow. |
 
 The three controller-related test suites verify deterministic numerical behavior only; their passing demos do not constitute closed-loop stability proofs or hardware validation. Koopman experiment artifacts are synthetic and fixed-seed; prediction metrics are not control metrics.
+
+
+## Core EXIM current-head rerun (2026-11-21)
+
+The current EXIM Tier 2 branch initially had no unit/synthetic workflow. Reintroducing it exposed a second-order integration issue: benchmark v0.4 generation and verification passed, but the parent v0.3 verifier failed because its generated fixtures had not been created. The workflow was corrected to generate v0.3 before verifying it. The latest current-head run [44812760656](https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy/actions/runs/44812760656) passed: 40 unit/Tier 2 fixture tests, deterministic v0.4 generation and integrity verification (1,400 cases, 700 paired situations, 14 families, zero pair-integrity failures), and parent v0.3 generation/verification. No provider API calls were made. The earlier malformed-verifier `KeyError: dependency_group` failure occurred on a prior commit and was fixed before the current successful run.
