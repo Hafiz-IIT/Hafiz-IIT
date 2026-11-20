@@ -184,3 +184,15 @@ The next research-code pass checked the residual-control, hybrid-control, Bayesi
 | [Koopman Control Lab PR #1](https://github.com/Hafiz-IIT/koopman-control-lab/pull/1) | Confirmed finite/shape validation across polynomial lifting, EDMD fitting, operator application and rollout; operator overflow is rejected. Repository scope is scalar EDMD-style prediction, not a controller or MPC. | [14 tests and experiment CI](https://github.com/Hafiz-IIT/koopman-control-lab/actions/runs/44804793440) passed at `ec70321478b01904221347b679aeeff2b0e083d2`. |
 
 These are deterministic numerical prototypes and CI tests. They do not establish learned RL performance, physical-system validity, formal stability/safety guarantees, or controller/MPC results. No new empirical performance claims are introduced.
+
+
+## Seventh-pass manuscript and empirical-artifact integrity review (2026-11-21)
+
+| Manuscript | Verification | Findings / boundary |
+|---|---|---|
+| [Residual RL Linear Priors Paper PR #1](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper/pull/1) | [LaTeX compile passed](https://github.com/Hafiz-IIT/residual-rl-linear-priors-paper/actions/runs/44787771121). | Title/abstract now distinguish the proposed learned residual policy from the deterministic scalar scaffold. No empirical performance result is claimed. |
+| [Hybrid LQR/RL Paper PR #1](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper/pull/1) | [LaTeX compile passed](https://github.com/Hafiz-IIT/hybrid-lqr-rl-paper/actions/runs/44794923752). | Manuscript describes scalar linear feedback plus a fixed cubic residual; it does not claim an implemented Riccati solution, trained RL policy, robustness or stability guarantee. |
+| [Bayesian Safe RL Paper PR #1](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper/pull/1) | Corrected two doubled LaTeX citation commands; [LaTeX compile passed](https://github.com/Hafiz-IIT/bayesian-safe-rl-paper/actions/runs/44808321847). | The implementation is a scalar Normal-Normal posterior and interval gate, not a Bayesian RL policy or formal safety certificate. |
+| [Koopman Control Paper PR #1](https://github.com/Hafiz-IIT/koopman-control-paper/pull/1) | [LaTeX compile passed](https://github.com/Hafiz-IIT/koopman-control-paper/actions/runs/44787780130). The archived benchmark artifact from companion-lab run #43946042060 was downloaded and independently checked. | Artifact contains 200 per-seed rows and 20 aggregate rows. Both CSV SHA-256 hashes match the artifact manifest. All 20 groups' means and sample standard deviations recomputed exactly from per-seed results; 95% t-interval endpoints matched within approximately 2.1e-9. The paper table agrees with the machine-readable summary. Results remain synthetic scalar prediction only. |
+
+The Koopman artifact-level check verifies the archived benchmark files and the reported aggregate calculations; it does not independently establish physical validity, Koopman invariance or control utility. Manuscripts remain drafts/in preparation. No external physical experiments were run.
