@@ -253,3 +253,8 @@ The current EXIM Tier 2 branch initially had no unit/synthetic workflow. Reintro
 | [memory-governor](https://github.com/Hafiz-IIT/memory-governor) | [17 unit tests](https://github.com/Hafiz-IIT/memory-governor/actions/runs/44796608689) and [CI](https://github.com/Hafiz-IIT/memory-governor/actions/runs/44796608866) passed | Validates memory-governor unit/CI behavior; the shared 100-case fixture validation is run from the Agent Evidence Probes workflow. |
 
 **Important distinction:** all 100 Tier 2 fixtures and their runner contracts are validated, but the real-model Tier 2 evaluation has not been executed. No baseline-vs-evidence-gated LLM outcome rates or model performance numbers are claimed.
+
+
+## Institutional evidence tracker encapsulation follow-up (2026-11-21)
+
+A second-pass review found that public mutable collections could bypass the authorized case methods even after constructor validation. The repair now detaches constructor inputs, exposes evidence via a read-only mapping, exposes dependency/authorization sets and audit history as immutable snapshots, and prevents public state reassignment after initialization/completion. [12 unit tests](https://github.com/Hafiz-IIT/institutional-evidence-tracker/actions/runs/44813637600) and [CI](https://github.com/Hafiz-IIT/institutional-evidence-tracker/actions/runs/44813637707) passed at branch head `902a4638b1a5d3df3d41e6c2734d103db086a96a`. This remains an in-process application-level control; actor identities are not authenticated.
